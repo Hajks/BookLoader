@@ -10,19 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SDP.WPF.DataAccess.Implementation;
+using SDP.WPF.ViewModels;
 
-namespace SDP.WPF
+namespace SDP.WPF.Views
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainView : Window
     {
-        public MainWindow()
+        public MainView()
         {
             InitializeComponent();
+            DataContext = new MainViewModel(new DialogService(), new SourceOperationStrategy());
         }
     }
 }

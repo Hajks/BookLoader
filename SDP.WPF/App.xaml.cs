@@ -13,5 +13,10 @@ namespace SDP.WPF
     /// </summary>
     public partial class App : Application
     {
+        private void OnStartup(object sender, StartupEventArgs e)
+        {
+            Views.MainView view = new Views.MainView();
+            view.Show();
+        }
     }
 }
